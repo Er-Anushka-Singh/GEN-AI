@@ -1,6 +1,154 @@
 
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
+<<<<<<< HEAD
+=======
+import readline from "readline-sync";
+dotenv.config();
+
+const ai = new GoogleGenAI({});
+
+
+
+async function main() {
+const query = readline.question("Ask me any Think...?");
+
+  const chat = await ai.models.generateContentStream({
+    model: "gemini-3-flash-preview",
+    history:[]
+  });
+  while(true){
+  const query = readline.question("\nPlease ask a question: ");
+
+  if(query.toLowerCase()=== "exit" || query.toLowerCase()=== "clear"){
+    console.log("Good Bye...!");
+    break;
+  }
+}
+ const result = await chat.sendMessageStream({
+  message:query,
+ })
+
+ for await (const chunk of result.stream){
+  const chunkText = chunk.text();
+  if(chunkText){
+    process.student.write(chunkText);
+  }
+ }
+ console.log("\n");
+}
+
+await main();
+
+
+
+/*
+
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+import readline from "readline-sync";
+dotenv.config();
+
+const ai = new GoogleGenAI({});
+
+
+
+async function main() {
+const query = readline.question("Ask me any Think...?");
+
+   const response = await ai.models.generateContentStream({
+    model: "gemini-3-flash-preview",
+    contents: query,
+  });
+
+
+  //console.log("\nChat response i : ",response);
+   for await (const chunk of response) {
+    console.log(chunk.text);
+  }
+}
+
+await main();
+
+
+
+
+
+
+
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+import readline from "readline-sync";
+dotenv.config();
+
+const ai = new GoogleGenAI({});
+
+
+
+async function main() {
+const query = readline.question("Please Ask any question..?");
+
+  const chat =  ai.chats.create({
+    model: "gemini-3-flash-preview",
+    history:[]
+  });
+
+while(true){
+  const query = readline.question("\nPlease ask a question: ");
+
+  if(query.toLowerCase()=== "exit" || query.toLowerCase()=== "clear"){
+    console.log("Good Bye...!");
+    break;
+  }
+}
+
+
+
+  const response =await chat.sendMessage({
+    message:query ,
+  })
+  console.log("\nChat response i : ",response.text);
+}
+
+await main();
+
+
+
+
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+import readline from "readline-sync";
+dotenv.config();
+
+const ai = new GoogleGenAI({});
+
+
+
+async function main() {
+const query = readline.question("Please Ask any question..?");
+
+  const chat =  ai.chats.create({
+    model: "gemini-3-flash-preview",
+    history:[]
+  });
+
+  const response =await chat.sendMessage({
+    message:query ,
+  })
+  console.log("Chat response i : ",response.text);
+}
+
+await main();
+
+
+
+
+
+
+
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+>>>>>>> 406c737 (Add update)
 dotenv.config();
 
 const ai = new GoogleGenAI({});
@@ -23,7 +171,11 @@ await main();
 
 
 
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> 406c737 (Add update)
 =================To give answer in specified range😎====================
 
 import { GoogleGenAI } from "@google/genai";
