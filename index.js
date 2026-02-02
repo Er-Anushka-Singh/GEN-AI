@@ -23,7 +23,11 @@ await main();
 
 
 
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> 406c737 (Add update)
 =================To give answer in specified range😎====================
 
 import { GoogleGenAI } from "@google/genai";
